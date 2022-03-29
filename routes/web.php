@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
 
 Auth::routes();
 
@@ -26,3 +23,8 @@ Route::middleware('auth')->namespace('Admin')->name('admin.')->prefix('admin')->
     Route::resource('/categories', 'CategoryController');
     Route::resource('/tags', 'TagController');
 });
+
+// Qualsiasi url non sia stato precedentemente stabilito rimanda a homepage
+Route::get('{any?}', function () {
+    return view('homepage');
+})->where("any", ".*");

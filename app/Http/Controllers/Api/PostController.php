@@ -26,7 +26,7 @@ class PostController extends Controller
         if ($category) {
             $posts = Post::where("category_id")->get();
         } else {
-            $posts = Post::all();
+            $posts = Post::with(["category", "tags"])->get();
         }
 
         return response()->json($posts);
