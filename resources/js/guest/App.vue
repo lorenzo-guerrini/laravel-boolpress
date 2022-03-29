@@ -21,5 +21,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+ul {
+  list-style-type: none;
+}
 </style>
