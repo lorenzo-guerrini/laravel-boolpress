@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    @if (Route::has('login'))
+    {{-- @if (Route::has('login'))
         <div class="top-right links">
             @auth
                 <a href="{{ route('admin.home') }}">ADMIN</a>
@@ -23,7 +23,7 @@
                 @endif
             @endauth
         </div>
-    @endif
+    @endif --}}
 
     <div id="app"></div>
     <script src="{{ asset('js/front.js') }}"></script>
